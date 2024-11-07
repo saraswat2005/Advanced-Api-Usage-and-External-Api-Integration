@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdvoAdvice - Register</title>
+    <style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1e26; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+.login-container, .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box, .register-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #262831; /* Darker chat background color */
+    border-radius: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #373a49; /* Darker input background color */
+    color: #ffffff; /* Light input text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+}
+
+button {
+    background-color: #4caf50; /* Green accent color */
+    cursor: pointer;
+}
+
+a {
+    color: #4caf50; /* Green accent color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+    </head>
+<body>
+    <div class="register-container">
+        <form method="post">
+        {% csrf_token %}
+            <div class="register-box">
+            <h3>Register</h3>
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="text" name="profession" id="profession" placeholder="Profession">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+            
+            <button id="register-button">Register</button>
+            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+        </div>
+        </form>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+
+    passwordInput.addEventListener("input", validatePassword);
+    confirmPasswordInput.addEventListener("input", validatePassword);
+
+    function validatePassword() {
+        const password = passwordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
+
+        if (password === confirmPassword) {
+            confirmPasswordInput.setCustomValidity('');
+        } else {
+            confirmPasswordInput.setCustomValidity("Passwords don't match");
+        }
+    }
+});
+        
+    </script>
+
+</body>
+</html>

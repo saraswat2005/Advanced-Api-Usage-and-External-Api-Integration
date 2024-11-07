@@ -1,0 +1,74 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1e26; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+.chat-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.user-history {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #9fa1aa; /* Darker panel background color */
+    border-right: 1px solid #787981ec; /* Darker panel border color */
+}
+
+.chatbox {
+    flex: 2;
+    padding: 20px;
+    height: 100%;
+    background-color: #262831; /* Darker chat background color */
+}
+
+#chat-log {
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    position: relative;
+    bottom: 3vh;
+    width: calc(100% - 200px);
+    padding: 10px; /* Increased padding */
+    margin-right: 10px;
+    background-color: #373a49; /* Darker input background color */
+    color: #ffffff; /* Light input text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+}
+
+#send-button {
+    position: relative;
+    bottom: 3vh;
+    padding: 10px 20px; /* Increased padding */
+    background-color: #4caf50; /* Green accent color */
+    color: #ffffff; /* Light text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+}
+
+#user-history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#user-history-list li {
+    padding: 10px; /* Increased padding */
+    border-bottom: 1px solid #404255; /* Darker border color */
+}
+
+h3 {
+    margin-top: 0;
+    color: #ffffff; /* Light text color */
+}
